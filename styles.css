@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: 1px solid #d1d5db;
+  background: white;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.description {
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+label,
+summary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+textarea,
+input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+button,
+#download-link {
+  border: 1px solid #9ca3af;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+button.primary {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 0.75rem;
+  min-height: 1.2rem;
+  font-size: 0.88rem;
+}
+
+#canvas {
+  height: 100vh;
+  background: #f1f5f9;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  #canvas {
+    height: 70vh;
+  }
+}
