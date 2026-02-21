@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowable AI BPMN Modeler</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/diagram-js.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/bpmn-font/css/bpmn.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>Flowable AI BPMN Modeler</h1>
+        <p class="description">
+          Design Flowable-compatible BPMN workflows from natural-language prompts.
+        </p>
+
+        <label for="prompt">Workflow prompt</label>
+        <textarea
+          id="prompt"
+          rows="8"
+          placeholder="Example: Build an employee onboarding flow that starts with HR form submission, manager approval, IT laptop provisioning, and final confirmation email."
+        ></textarea>
+
+        <div class="row">
+          <button id="generate-btn" class="primary">Generate from Prompt</button>
+          <button id="reset-btn">Reset Diagram</button>
+        </div>
+
+        <details>
+          <summary>AI endpoint configuration (optional)</summary>
+          <label for="endpoint">Endpoint URL</label>
+          <input id="endpoint" placeholder="https://api.openai.com/v1/chat/completions" />
+
+          <label for="model">Model</label>
+          <input id="model" placeholder="gpt-4.1-mini" />
+
+          <label for="api-key">API Key</label>
+          <input id="api-key" type="password" placeholder="sk-..." />
+        </details>
+
+        <div class="row">
+          <button id="export-btn">Export BPMN XML</button>
+          <a id="download-link" class="hidden" download="workflow.bpmn">Download</a>
+        </div>
+
+        <p id="status" class="status">Loading modeler...</p>
+      </aside>
+
+      <main>
+        <div id="canvas"></div>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/bpmn-js@17.11.1/dist/bpmn-modeler.development.js"></script>
+    <script src="https://unpkg.com/bpmn-moddle@9.0.4/resources/flowable.json"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
